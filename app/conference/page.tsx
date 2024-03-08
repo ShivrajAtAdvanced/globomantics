@@ -10,7 +10,7 @@ const conference = () => {
       <div className={style.bgWrap}>
         <Image 
           src={ConferenceImage}
-          alt="COnference Pic"
+          alt="Conference Pic"
           quality={100}
           placeholder="blur"
           sizes={"100vw"}

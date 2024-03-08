@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'next/link';
 import style from '../conference.module.css';
 
+export let speakerJson = {};
+
 async function fetchSpeakers() {
   //Static Site Generation by default or Static Data Fetching
   // const response = await fetch(
@@ -15,6 +17,7 @@ async function fetchSpeakers() {
   );
 
   const data = await response.json();
+  speakerJson = await data;
   return data;
 }
 
@@ -31,7 +34,9 @@ const speakers = async () => {
       </h2>
       {data.speakers.map(({id, name, bio}) => (
         <div key={id} className={style.infoContainer}>
-          <h3 className={style.titleText}>{name}</h3>
+          <Link href={`/conference/speakers/${name}`}>
+            <h3 className={style.titleText}>{name}</h3>
+          </Link>
           <h5 className={style.descText}>{bio}</h5>
         </div>
       ))}
