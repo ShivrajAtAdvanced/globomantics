@@ -26,7 +26,7 @@ const sessions = async () => {
       </h2>
       {data.sessions.map(
         ({ id, title, description, room, day, track, speakers }) => (
-          <div key={id}className={style.infoContainer}>
+          <div key={id} className={style.infoContainer}>
             <h3 className={style.titleText}>{title}</h3>
             {speakers && speakers.map(({name}) => (
               <h3 key={id} className={style.titleText}>Speaker: {name}</h3>
