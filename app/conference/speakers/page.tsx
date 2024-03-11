@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 import style from '../conference.module.css';
 
-export let speakerJson = {};
+//export let speakerJson = {};
 
 async function fetchSpeakers() {
   //Static Site Generation by default or Static Data Fetching

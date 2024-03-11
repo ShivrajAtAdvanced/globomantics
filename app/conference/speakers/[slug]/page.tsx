@@ -13,13 +13,14 @@ async function fetchSpeakersInfo(params) {
         (speaker) => speaker.name === params.slug
     );
     //const speakerInfo = data;
+    console.log(speakerInfo);
     return speakerInfo;
 }
 
 const dynamicPageComponent = async ({params}) => {
     const speakerInfo = await fetchSpeakersInfo(params);
 
-    const { name, bio, sessions } = speakerInfo;
+    const { id, bio, sessions, name, featured } = speakerInfo;
     return (
         <div className={style.infoContainer}>
             <h3 className={style.titleText}>{name}</h3>
