@@ -29,7 +29,7 @@ const sessions = async () => {
           <div key={id} className={style.infoContainer}>
             <h3 className={style.titleText}>{title}</h3>
             {speakers && speakers.map(({name}) => (
-              <h3 key={id}className={style.titleText}>Speaker: {name}</h3>
+              <h3 key={id} className={style.titleText}>Speaker: {name}</h3>
             ))}
             <h5 className={style.descText}>{description}</h5>
             <h4 className={style.infoText}>Room: {room}</h4>
