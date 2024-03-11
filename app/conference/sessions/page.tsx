@@ -14,7 +14,7 @@ import style from '../conference.module.css';
 // }
 
 const sessions = async () => {
-  const data = await fetchSessions();
+  //const data = await fetchSessions();
 
   return (
     <div className={style.parentContainer}>
