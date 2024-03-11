@@ -17,7 +17,8 @@ import style from '../../conference.module.css';
 //     return speakerInfo;
 // }
 
-const dynamicPageComponent = async ({params}) => {
+//const dynamicPageComponent = async ({params}) => {
+const dynamicPageComponent = () => {
     // const speakerInfo = await fetchSpeakersInfo(params);
 
     // const { id, bio, sessions, name, featured } = speakerInfo;
