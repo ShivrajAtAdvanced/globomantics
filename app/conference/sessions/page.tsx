@@ -3,18 +3,18 @@ import Link from 'next/link';
 import style from '../conference.module.css';
 
 /* Dynamic Data Fetching / Server Side Rendering i.e. SSR  */
-// async function fetchSessions() {
-//   const res = await fetch(
-//   'https://raw.githubusercontent.com/adhithiravi/Consuming-GraphqL-Apollo/master/api/data/sessions.json',
-//   { cache: 'no-store' }
-//   );
+async function fetchSessions() {
+  const res = await fetch(
+  'https://raw.githubusercontent.com/adhithiravi/Consuming-GraphqL-Apollo/master/api/data/sessions.json',
+  { cache: 'no-store' }
+  );
 
-//   const data = await res.json();
-//   return data;
-// }
+  const data = await res.json();
+  return data;
+}
 
 const sessions = async () => {
-  //const data = await fetchSessions();
+  const data = await fetchSessions();
 
   return (
     <div className={style.parentContainer}>
@@ -24,11 +24,11 @@ const sessions = async () => {
       <h2>
         <Link href="/conference">Back to Conference</Link>
       </h2>
-      {/* {data.sessions.map(
-        ({ id, title, description, room, day, track, speakers }) => (
+      {data.sessions.map(
+        ({ id, title, description, room, day, track, speakers }: any) => (
           <div key={id} className={style.infoContainer}>
             <h3 className={style.titleText}>{title}</h3>
-            {speakers && speakers.map(({name}) => (
+            {speakers && speakers.map(({name}: any) => (
               <h3 key={id} className={style.titleText}>Speaker: {name}</h3>
             ))}
             <h5 className={style.descText}>{description}</h5>
@@ -37,7 +37,7 @@ const sessions = async () => {
             <h4 className={style.infoText}>Track: {track}</h4>
           </div>
         )
-      )} */}
+      )}
     </div>
   )
 }
