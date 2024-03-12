@@ -2,35 +2,35 @@ import React from 'react'
 //import { speakerJson } from '../page';
 import style from '../../conference.module.css';
 
-// async function fetchSpeakersInfo(params) {
-//     const res = await fetch(
-//     'https://raw.githubusercontent.com/adhithiravi/Consuming-GraphqL-Apollo/master/api/data/speakers.json'
-//     ) 
+async function fetchSpeakersInfo(params: any) {
+    const res = await fetch(
+    'https://raw.githubusercontent.com/adhithiravi/Consuming-GraphqL-Apollo/master/api/data/speakers.json'
+    ) 
     
-//     const data = await res.json();
-//     //const speakerInfo = speakerJson.speakers.find(
-//     const speakerInfo = await data.speakers.find(
-//         (speaker) => speaker.name === params.slug
-//     );
-//     //const speakerInfo = data;
-//     console.log(speakerInfo);
-//     return speakerInfo;
-// }
+    const data = await res.json();
+    //const speakerInfo = speakerJson.speakers.find(
+    const speakerInfo = await data.speakers.find(
+        (speaker: any) => speaker.name === params.slug
+    );
+    //const speakerInfo = data;
+    console.log(speakerInfo);
+    return speakerInfo;
+}
 
-//const dynamicPageComponent = async ({params}) => {
-const dynamicPageComponent = () => {
-    // const speakerInfo = await fetchSpeakersInfo(params);
+const dynamicPageComponent = async ({params}: any) => {
+//const dynamicPageComponent = () => {
+    const speakerInfo = await fetchSpeakersInfo(params);
 
-    // const { id, bio, sessions, name, featured } = speakerInfo;
+    const { id, bio, sessions, name, featured }: any = speakerInfo;
     return (
         <div className={style.infoContainer}>
-            {/* <h3 className={style.titleText}>{name}</h3>
+            <h3 className={style.titleText}>{name}</h3>
             <h5 className={style.descText}>About: {bio}</h5>
-            {sessions && sessions.map(({ name, id }) => (
+            {sessions && sessions.map(({ name, id }: any) => (
                 <div key={id}>
                     <h5 className={style.descText}>Session: {name}</h5>
                 </div>
-            ))} */}
+            ))}
         </div>
     )
 }
