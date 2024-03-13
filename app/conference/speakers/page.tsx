@@ -34,7 +34,8 @@ const speakers = async () => {
       </h2>
       {data.speakers.map(({id, name, bio}: any) => (
         <div key={id} className={style.infoContainer}>
-          <Link href={`/conference/speakers/${name}`}>
+          <Link href={`/conference/speakers/${id}`} className={style.bgLinks}>
+          {/* <Link href={`/conference/speakers/${name}`} className={style.bgLinks}> */}
             <h3 className={style.titleText}>{name}</h3>
           </Link>
           <h5 className={style.descText}>{bio}</h5>
