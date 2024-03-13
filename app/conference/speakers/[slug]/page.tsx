@@ -2,7 +2,7 @@ import React from 'react'
 //import { speakerJson } from '../page';
 import style from '../../conference.module.css';
 
-async function fetchSpeakersInfo(params) {
+async function fetchSpeakersInfo(params: any) {
 //async function fetchSpeakersInfo(searchParams) {
     const res = await fetch(
     'https://raw.githubusercontent.com/adhithiravi/Consuming-GraphqL-Apollo/master/api/data/speakers.json'
@@ -31,6 +31,7 @@ async function fetchSpeakersInfo(params) {
     return speakerInfo;
 }
 
+//const dynamicPageComponent = async ({params}: {params: {slug: string}}) => { //This gives warning but works.
 const dynamicPageComponent = async ({params}: any) => {
     const speakerInfo = await fetchSpeakersInfo(params);
     console.log(speakerInfo);
@@ -49,7 +50,8 @@ const dynamicPageComponent = async ({params}: any) => {
 }
 
 export default dynamicPageComponent
-
+//
+//This below function is also a working one. It is same as above just written differently.
 // export default async function Page({ params }: any) {
 // // export default async function Page(
 // // {   
